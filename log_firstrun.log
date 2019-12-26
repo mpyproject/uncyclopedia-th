@@ -1,0 +1,401 @@
+Welcome to Termux!
+
+Wiki:            https://wiki.termux.com
+Community forum: https://termux.com/communit
+y
+Gitter chat:     https://gitter.im/termux/te
+rmux
+IRC channel:     #termux on freenode
+
+Working with packages:
+
+ * Search packages:   pkg search <query>
+ * Install a package: pkg install <package>
+ * Upgrade packages:  pkg upgrade
+
+Subscribing to additional repositories:
+
+ * Root:     pkg install root-repo
+ * Unstable: pkg install unstable-repo
+ * X11:      pkg install x11-repo
+
+Report issues at https://termux.com/issues
+
+$ cd /storage/emulated/0/resource/wikibot/PW
+BC
+$ python pwb.py welcome.py
+[Match] OrdyHD has enough edits to be welcom
+ed.
+[Skip ] OrdyHD has been already welcomed.
+[Match] Konthai has enough edits to be welco
+med.
+Logging in to thuncyc:th as PatzaBot@site_we
+lcomebot
+Page [[คุยกับผู้ใช้:Konthai]] saved
+[Done ] One user has been welcomed.
+[NoAct] สุรส has no contributions.
+[NoAct] Nok476746 has no contributions.
+[Match] Lamuto has enough edits to be welcom
+ed.
+Page [[คุยกับผู้ใช้:Lamuto]] saved
+[Done ] 2 users have been welcomed.
+[NoAct] Adamery has no contributions.
+[NoAct] Sna5z8q has no contributions.
+[NoAct] Themanrundos has no contributions.
+[NoAct] สมชายตูดหลุมดำ has no contributions.
+[NoAct] Dark Pit has no contributions.
+[NoAct] Pastellava has no contributions.
+[NoAct] โจรูโน่ โอบาม่า has no contributions.
+[NoAct] Kamine has no contributions.
+[NoAct] Tazztorquay has no contributions.
+[NoAct] Doanga2007 has no contributions.
+[NoAct] Chanon937 has no contributions.
+[NoAct] Salmonsushi has no contributions.
+[Match] ItsItee has enough edits to be welco
+med.
+Page [[คุยกับผู้ใช้:ItsItee]] saved
+[Done ] 3 users have been welcomed.
+[Match] Akito has enough edits to be welcome
+d.
+Page [[คุยกับผู้ใช้:Akito]] saved
+[Done ] 4 users have been welcomed.
+[Match] See455 has enough edits to be welcom
+ed.
+[Skip ] See455 has been already welcomed.
+[NoAct] Thanyalak has no contributions.
+[Match] Kavear has enough edits to be welcom
+ed.
+-ERROR: An error occurred for uri https://ไร้
+สาระนุกรม.com/api.php
+ERROR: Traceback (most recent call last):
+  File "/data/data/com.termux/files/usr/lib/
+python3.7/site-packages/urllib3/connectionpo
+ol.py", line 387, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 2, in raise_from
+  File "/data/data/com.termux/files/usr/lib/
+python3.7/site-packages/urllib3/connectionpo
+ol.py", line 383, in _make_request
+    httplib_response = conn.getresponse()
+  File "/data/data/com.termux/files/usr/lib/
+python3.7/http/client.py", line 1321, in get
+response
+    response.begin()
+  File "/data/data/com.termux/files/usr/lib/
+python3.7/http/client.py", line 296, in begi
+n
+    version, status, reason = self._read_sta
+tus()
+  File "/data/data/com.termux/files/usr/lib/
+python3.7/http/client.py", line 257, in _rea
+d_status
+    line = str(self.fp.readline(_MAXLINE + 1
+), "iso-8859-1")
+  File "/data/data/com.termux/files/usr/lib/
+python3.7/socket.py", line 589, in readinto
+    return self._sock.recv_into(b)
+  File "/data/data/com.termux/files/usr/lib/
+python3.7/ssl.py", line 1052, in recv_into
+    return self.read(nbytes, buffer)
+  File "/data/data/com.termux/files/usr/lib/
+python3.7/ssl.py", line 911, in read
+    return self._sslobj.read(len, buffer)
+socket.timeout: The read operation timed out
+
+During handling of the above exception, anot
+her exception occurred:
+
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/usr/lib/
+python3.7/site-packages/requests/adapters.py
+", line 449, in send
+    timeout=timeout
+  File "/data/data/com.termux/files/usr/lib/
+python3.7/site-packages/urllib3/connectionpo
+ol.py", line 641, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "/data/data/com.termux/files/usr/lib/
+python3.7/site-packages/urllib3/util/retry.p
+y", line 368, in increment
+    raise six.reraise(type(error), error, _s
+tacktrace)
+  File "/data/data/com.termux/files/usr/lib/
+python3.7/site-packages/urllib3/packages/six
+.py", line 686, in reraise
+    raise value
+  File "/data/data/com.termux/files/usr/lib/
+python3.7/site-packages/urllib3/connectionpo
+ol.py", line 603, in urlopen
+    chunked=chunked)
+  File "/data/data/com.termux/files/usr/lib/
+python3.7/site-packages/urllib3/connectionpo
+ol.py", line 389, in _make_request
+    self._raise_timeout(err=e, url=url, time
+out_value=read_timeout)
+  File "/data/data/com.termux/files/usr/lib/
+python3.7/site-packages/urllib3/connectionpo
+ol.py", line 307, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read 
+timed out. (read timeout=%s)" % timeout_valu
+e)
+urllib3.exceptions.ReadTimeoutError: HTTPSCo
+nnectionPool(host='xn--12c1czafac9b9bq7dxgrc
+.com', port=443): Read timed out. (read time
+out=45)
+
+During handling of the above exception, anot
+her exception occurred:
+
+Traceback (most recent call last):
+  File "/storage/emulated/0/resource/wikibot
+/PWBC/pywikibot/data/api.py", line 1745, in 
+_http_request
+    body=body, headers=headers)
+  File "/storage/emulated/0/resource/wikibot
+/PWBC/pywikibot/tools/__init__.py", line 174
+4, in wrapper
+    return obj(*__args, **__kw)
+  File "/storage/emulated/0/resource/wikibot
+/PWBC/pywikibot/comms/http.py", line 316, in
+ request
+    r = fetch(baseuri, method, params, body,
+ headers, **kwargs)
+  File "/storage/emulated/0/resource/wikibot
+/PWBC/pywikibot/comms/http.py", line 520, in
+ fetch
+    error_handling_callback(request)
+  File "/storage/emulated/0/resource/wikibot
+/PWBC/pywikibot/comms/http.py", line 405, in
+ error_handling_callback
+    raise request.data
+  File "/storage/emulated/0/resource/wikibot
+/PWBC/pywikibot/comms/http.py", line 383, in
+ _http_process
+    **http_request.kwargs)
+  File "/data/data/com.termux/files/usr/lib/
+python3.7/site-packages/requests/sessions.py
+", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/data/data/com.termux/files/usr/lib/
+python3.7/site-packages/requests/sessions.py
+", line 646, in send
+    r = adapter.send(request, **kwargs)
+  File "/data/data/com.termux/files/usr/lib/
+python3.7/site-packages/requests/adapters.py
+", line 529, in send
+    raise ReadTimeout(e, request=request)
+requests.exceptions.ReadTimeout: HTTPSConnec
+tionPool(host='xn--12c1czafac9b9bq7dxgrc.com
+', port=443): Read timed out. (read timeout=
+45)
+
+WARNING: Waiting 5 seconds before retrying.
+Page [[คุยกับผู้ใช้:Kavear]] saved
+[Done ] 5 users have been welcomed.
+[NoAct] Netkuker has no contributions.
+[NoAct] RequiemBruh has no contributions.
+[NoAct] Nunoon017 has no contributions.
+[NoAct] Cabbicab has no contributions.
+[Match] SayCheese has enough edits to be wel
+comed.
+[Skip ] SayCheese has been already welcomed.
+[NoAct] HYPER CHERRY FOX has no contribution
+s.
+[Match] เรือสวย รวยเด้า has enough edits to be
+ welcomed.
+Page [[คุยกับผู้ใช้:เรือสวย รวยเด้า]] saved
+[Done ] 6 users have been welcomed.
+[Match] Dev1707 has enough edits to be welco
+med.
+Sleeping for 4.5 seconds, 2019-12-19 15:03:2
+9
+Page [[คุยกับผู้ใช้:Dev1707]] saved
+[Done ] 7 users have been welcomed.
+[Match] St.magaret has enough edits to be we
+lcomed.
+Sleeping for 3.8 seconds, 2019-12-19 15:03:4
+0
+Page [[คุยกับผู้ใช้:St.magaret]] saved
+[Done ] 8 users have been welcomed.
+[Match] AlizzVII has enough edits to be welc
+omed.
+ERROR: An error occurred for uri https://ไร้ส
+าระนุกรม.com/api.php
+ERROR: Traceback (most recent call last):
+  File "/data/data/com.termux/files/usr/lib/
+python3.7/site-packages/urllib3/connectionpo
+ol.py", line 387, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 2, in raise_from
+  File "/data/data/com.termux/files/usr/lib/
+python3.7/site-packages/urllib3/connectionpo
+ol.py", line 383, in _make_request
+    httplib_response = conn.getresponse()
+  File "/data/data/com.termux/files/usr/lib/
+python3.7/http/client.py", line 1321, in get
+response
+    response.begin()
+  File "/data/data/com.termux/files/usr/lib/
+python3.7/http/client.py", line 296, in begi
+n
+    version, status, reason = self._read_sta
+tus()
+  File "/data/data/com.termux/files/usr/lib/
+python3.7/http/client.py", line 257, in _rea
+d_status
+    line = str(self.fp.readline(_MAXLINE + 1
+), "iso-8859-1")
+  File "/data/data/com.termux/files/usr/lib/
+python3.7/socket.py", line 589, in readinto
+    return self._sock.recv_into(b)
+  File "/data/data/com.termux/files/usr/lib/
+python3.7/ssl.py", line 1052, in recv_into
+    return self.read(nbytes, buffer)
+  File "/data/data/com.termux/files/usr/lib/
+python3.7/ssl.py", line 911, in read
+    return self._sslobj.read(len, buffer)
+socket.timeout: The read operation timed out
+
+During handling of the above exception, anot
+her exception occurred:
+
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/usr/lib/
+python3.7/site-packages/requests/adapters.py
+", line 449, in send
+    timeout=timeout
+  File "/data/data/com.termux/files/usr/lib/
+python3.7/site-packages/urllib3/connectionpo
+ol.py", line 641, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "/data/data/com.termux/files/usr/lib/
+python3.7/site-packages/urllib3/util/retry.p
+y", line 368, in increment
+    raise six.reraise(type(error), error, _s
+tacktrace)
+  File "/data/data/com.termux/files/usr/lib/
+python3.7/site-packages/urllib3/packages/six
+.py", line 686, in reraise
+    raise value
+  File "/data/data/com.termux/files/usr/lib/
+python3.7/site-packages/urllib3/connectionpo
+ol.py", line 603, in urlopen
+    chunked=chunked)
+  File "/data/data/com.termux/files/usr/lib/
+python3.7/site-packages/urllib3/connectionpo
+ol.py", line 389, in _make_request
+    self._raise_timeout(err=e, url=url, time
+out_value=read_timeout)
+  File "/data/data/com.termux/files/usr/lib/
+python3.7/site-packages/urllib3/connectionpo
+ol.py", line 307, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read 
+timed out. (read timeout=%s)" % timeout_valu
+e)
+urllib3.exceptions.ReadTimeoutError: HTTPSCo
+nnectionPool(host='xn--12c1czafac9b9bq7dxgrc
+.com', port=443): Read timed out. (read time
+out=45)
+
+During handling of the above exception, anot
+her exception occurred:
+
+Traceback (most recent call last):
+  File "/storage/emulated/0/resource/wikibot
+/PWBC/pywikibot/data/api.py", line 1745, in 
+_http_request
+    body=body, headers=headers)
+  File "/storage/emulated/0/resource/wikibot
+/PWBC/pywikibot/tools/__init__.py", line 174
+4, in wrapper
+    return obj(*__args, **__kw)
+  File "/storage/emulated/0/resource/wikibot
+/PWBC/pywikibot/comms/http.py", line 316, in
+ request
+    r = fetch(baseuri, method, params, body,
+ headers, **kwargs)
+  File "/storage/emulated/0/resource/wikibot
+/PWBC/pywikibot/comms/http.py", line 520, in
+ fetch
+    error_handling_callback(request)
+  File "/storage/emulated/0/resource/wikibot
+/PWBC/pywikibot/comms/http.py", line 405, in
+ error_handling_callback
+    raise request.data
+  File "/storage/emulated/0/resource/wikibot
+/PWBC/pywikibot/comms/http.py", line 383, in
+ _http_process
+    **http_request.kwargs)
+  File "/data/data/com.termux/files/usr/lib/
+python3.7/site-packages/requests/sessions.py
+", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/data/data/com.termux/files/usr/lib/
+python3.7/site-packages/requests/sessions.py
+", line 646, in send
+    r = adapter.send(request, **kwargs)
+  File "/data/data/com.termux/files/usr/lib/
+python3.7/site-packages/requests/adapters.py
+", line 529, in send
+    raise ReadTimeout(e, request=request)
+requests.exceptions.ReadTimeout: HTTPSConnec
+tionPool(host='xn--12c1czafac9b9bq7dxgrc.com
+', port=443): Read timed out. (read timeout=
+45)
+
+WARNING: Waiting 5 seconds before retrying.
+Page [[คุยกับผู้ใช้:AlizzVII]] saved
+[Done ] 9 users have been welcomed.
+[NoAct] PexxisR has no contributions.
+[Match] Tytyty75 has enough edits to be welc
+omed.
+Page [[คุยกับผู้ใช้:Tytyty75]] saved
+[Done ] 10 users have been welcomed.
+[Match] Giorno Giovanna has enough edits to 
+be welcomed.
+[Skip ] Giorno Giovanna has been already wel
+comed.
+[NoAct] Viewart9 has no contributions.
+[NoAct] Here123456 has no contributions.
+[Match] Moddang has enough edits to be welco
+med.
+[Skip ] Moddang has been already welcomed.
+[Match] Binzusane has enough edits to be wel
+comed.
+[Skip ] Binzusane has been already welcomed.
+[NoAct] Bulonfis5 has no contributions.
+[Match] Greanpeach has enough edits to be we
+lcomed.
+Page [[คุยกับผู้ใช้:Greanpeach]] saved
+[Done ] 11 users have been welcomed.
+[Match] เพื่อนยืมยืมเพื่อน has enough edits to be 
+welcomed.
+[Skip ] เพื่อนยืมยืมเพื่อน has been already welcom
+ed.
+[Match] Peachdekhong has enough edits to be 
+welcomed.
+[Skip ] Peachdekhong has been already welcom
+ed.
+[NoAct] 가리란 has no contributions.
+[Match] Geonuch has enough edits to be welco
+med.
+[Skip ] Geonuch has been already welcomed.
+[NoAct] ยุด has no contributions.
+[NoAct] Un 201999 has no contributions.
+[NoAct] Ramenguykung has no contributions.
+[Match] KamiAmagumo has enough edits to be w
+elcomed.
+Page [[คุยกับผู้ใช้:KamiAmagumo]] saved
+[Done ] 12 users have been welcomed.
+[MSG  ] Putting the log of the latest 12 use
+rs...
+[MSG  ] Log page is not exist, getting infor
+mation for page creation
+Sleeping for 4.4 seconds, 2019-12-19 15:06:1
+0
+Page [[ผู้ใช้:PatzaBot/ต้อนรับ/บันทึก/2019/12/19]] 
+saved
+[MSG  ] Sleeping 10800 seconds before rerun.
+ 19 Dec 2019 08:06:15 (UTC)
+
+[Process completed (signal 9) - press Enter]

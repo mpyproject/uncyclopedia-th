@@ -216,6 +216,7 @@ logbook = {
     'nl': 'Project:Logboek welkom',
     'no': 'Project:Velkomstlogg',
     'sq': 'Project:Tung log',
+    'th': 'ผู้ใช้:PatzaBot/ต้อนรับ/บันทึก',
     'ur': 'Project:نوشتہ خوش آمدید',
     'zh': 'User:Welcomebot/欢迎日志',
     'commons': 'Project:Welcome log',
@@ -305,6 +306,9 @@ netext = {
     'wikivoyage': {
         'bn': '{{subst:স্বাগতম}} %s',
     },
+       'thuncyc': {
+        'th': '{{subst:ยินดีต้อนรับ}} <br/>— %s',
+    },
 }
 # The page where the bot will report users with a possibly bad username.
 report_page = {
@@ -329,7 +333,10 @@ report_page = {
         'ur': 'Project:تختہ اعلانات برائے منتظمین/صارف نام برائے پڑتال',
         'zh': 'User:Welcomebot/report',
         'zh-yue': 'User:Alexbot/report',
-    }
+    },
+      'thuncyc': {
+        'th': 'ผู้ใช้:PatzaBot/ต้อนรับ/รายงาน',
+    },
 }
 # The page where the bot reads the real-time bad words page
 # (this parameter is optional).
@@ -349,7 +356,10 @@ bad_pag = {
         'sr': 'User:ZoranBot/лоша корисничка имена',
         'zh': 'User:Welcomebot/badname',
         'zh-yue': 'User:Welcomebot/badname',
-    }
+    },
+    'thuncyc': {
+        'th': 'ผู้ใช้:PatzaBot/ต้อนรับ/ชื่อห้ามสร้าง',
+    },
 }
 
 timeselected = ' ~~~~~'  # Defining the time used after the signature
@@ -376,7 +386,10 @@ report_text = {
         'sq': '\n*[[User:%s]] ' + timeselected,
         'sr': '\n*{{Корисник|%s}}' + timeselected,
         'zh': '\n*{{User|%s}}' + timeselected
-    }
+    },
+    'thuncyc': {
+        'th': '{{admincheck|%s}}' + timeselected,
+    },
 }
 # Set where you load your list of signatures that the bot will load if you use
 # the random argument (this parameter is optional).
@@ -397,6 +410,7 @@ random_sign = {
     'ur': 'Project:خوش آمدید/دستخطیں',
     'vec': 'Utente:FriBot/Firme',
     'zh': 'User:Welcomebot/欢迎日志/用户',
+    'th': 'ผู้ใช้:PatzaBot/ต้อนรับ/สุ่มชื่อต้อนรับ',
 }
 # The page where the bot reads the real-time whitelist page.
 # (this parameter is optional).
@@ -413,6 +427,7 @@ whitelist_pg = {
 final_new_text_additions = {
     'it': '\n<!-- fine template di benvenuto -->',
     'zh': '<small>(via ~~~)</small>',
+    'th': '<!-- ข้อความอัตโนมัตินี้โพสต์โดย PatzaBot -->',
 }
 
 #
@@ -460,22 +475,23 @@ class Global(object):
 
     """Container class for global settings."""
 
-    attachEditCount = 1     # edit count that an user required to be welcomed
-    dumpToLog = 15          # number of users that are required to add the log
-    offset = None           # skip users newer than that timestamp
-    timeoffset = 0          # skip users newer than # minutes
-    recursive = True        # define if the Bot is recursive or not
-    timeRecur = 3600        # how much time (sec.) the bot waits before restart
-    makeWelcomeLog = True   # create the welcome log or not
-    confirm = False         # should bot ask to add user to bad-username list
-    welcomeAuto = False     # should bot welcome auto-created users
-    filtBadName = False     # check if the username is ok or not
-    randomSign = False      # should signature be random or not
-    saveSignIndex = False   # should save the signature index or not
-    signFileName = None     # File name, default: None
-    defaultSign = '--~~~~'  # default signature
-    queryLimit = 50         # number of users that the bot load to check
-    quiet = False           # Users without contributions aren't displayed
+    attachEditCount = 1     # จำนวนการแก้ไขน้อยที่สุดเพื่อต้อนรับ (ต่ำกว่า # ครั้งจะไม่ต้อนรับ)
+    dumpToLog = 15          # จำนวนผู้ใช้ที่จำเป็นต้องใส่ในบันทึก (บันทึกที่หน้า [[ผู้ใช้:PatzaBot/ต้อนรับ/บันทึก]] )
+    offset = None           # ข้ามผู้ใช้นี้เมื่อสร้างหลังจาก yyyymmddhhmmsss
+    timeoffset = 0          # ข้ามผู้ใช้ที่มีอายุใหม่กว่า # นาที
+    recursive = True        # ให้บอตตรวจสอบว่าบอตส่งข้อความซ้ำหรือไม่
+    timeRecur = 10800       # ให้บอตอัพเดตทุก ๆ # วินาที (1800 = 30 นาที)
+    makeWelcomeLog = True   # บันทึกการยินดีต้อนรับหรือไม่? (บันทึกที่หน้า [[ผู้ใช้:PatzaBot/ต้อนรับ/บันทึก]] )
+    confirm = True          # ถามผู้ควบคุมบอตว่าชื่อที่พบเป็นชื่อต้องห้ามหรือไม่
+    welcomeAuto = False     # ต้อนรับบัญชีผู้ใช้ที่เป็นการสร้างแบบอัตโนมัติหรือไม่ (Auto-create acc)
+    filtBadName = True      # ตรวจว่าชื่อผู้ใช้รับได้หรือไม่ (รายการจะอยู่ที่ [[ผู้ใช้:PatzaBot/ต้อนรับ/ชื่อห้ามสร้าง]])
+                            # ถ้าชื่อนั้นตรง จะแจ้งที่[[ผู้ใช้:PatzaBot/ต้อนรับ/รายงาน]]
+    randomSign = False      # สุ่มลายเซ็นท้ายข้อความต้อนรับหรือไม่ (สุ่มจาก [[ผู้ใช้:PatzaBot/ต้อนรับ/สุ่มชื่อต้อนรับ]] )
+    saveSignIndex = False   # ควรบันทึกว่าลงชื่อผู้ใดหลังสุ่มแล้วหรือไม่
+    signFileName = None     # ไฟล์ของรายชื่อ (ผู้ดูแลต้องตั้งค่า โดยปกติเป็น none)
+    defaultSign = '~~~~'    # ลายเซ็นปกติ
+    queryLimit = 50         # จำนวนผู้ใช้ที่บอตจะตรวจสอบในหนึ่งครั้งการทำงาน
+    quiet = False           # ผู้ใช้ที่ไม่มีในบันทึกการมีส่วนร่วมควรนำออกจากรายการหรือไม่ 
 
 
 class WelcomeBot(SingleSiteBot):
@@ -634,15 +650,15 @@ class WelcomeBot(SingleSiteBot):
         if len(self._BAQueue) >= globalvar.dumpToLog or final:
             rep_text = ''
             # name in queue is max, put detail to report page
-            pywikibot.output('Updating badname accounts to report page...')
+            pywikibot.output('อัพเดตบอตเพื่อเข้ากับรายการชื่อห้ามสร้าง')
             rep_page = pywikibot.Page(self.site,
                                       i18n.translate(self.site,
                                                      report_page))
             if rep_page.exists():
                 text_get = rep_page.get()
             else:
-                text_get = ('This is a report page for the Bad-username, '
-                            'please translate me. --~~~')
+                text_get = ('หน้านี้มีไว้สำหรับการแจ้งเมื่อพบชิ่อผู้ใช้ไม่เหมาะสม, '
+                            'สร้างและแก้ไขอัตโนมัติโดยบอต ~~~ สร้างเมื่อ {{subst:#time:d F ปีxkY, เวลา H:i น.}}\n!== รายการ ==')
             pos = 0
             # The talk page includes "_" between the two names, in this way
             # replace them to " ".
@@ -678,7 +694,7 @@ class WelcomeBot(SingleSiteBot):
         if self.site.code == 'it':
             pattern = '%d/%m/%Y'
         else:
-            pattern = '%Y/%m/%d'
+            pattern = '%Y/%m' #เฉพาะปีและเดือนพอ
         target = self.log_name + '/' + time.strftime(
             pattern, time.localtime(time.time()))
 

@@ -1,6 +1,6 @@
 [gerrit]
-host=gerrit.wikimedia.org
+host=github.com
 port=29418
-project=pywikibot/core.git
+project=ptsgrn/uncyclopedia.git
 defaultbranch=master
 defaultrebase=0
