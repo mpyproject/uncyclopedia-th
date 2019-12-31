@@ -11,11 +11,11 @@
 ใช้โปรแกรมไพธอนในการรัน ~~ศึกษาวิธีเอง ฮ่วย!~~
 
 ล้อเล่น บอกบ้างก็ได้:
-* บนโปรแกรมไพธอน รันครั้งแรกโดยใช้ [`pwb.py`](../blob/master/pwb.py)` setup`
+* บนโปรแกรมไพธอน รันครั้งแรกโดยใช้ [`pwb.py`](../pwb.py)` setup`
 * บน Termux ใช้ `python pwb.py setup`
 * แนะนำให้อ่านที่[เอกสารกำกับการใช้งานของไพวิกิบอต (ฉบับเต็ม)](https://doc.wikimedia.org/pywikibot/master/) เพื่อทำความเข้าใจเพิ่มเติม
 
 ## ข้อแนะนำเพิ่มเติม
-* สคริปต์นี้มีมอดูล [/i18n](../blob/master/i18n) ที่ไม่เหมือนกับโครงการวิกิมีเดีย
+* สคริปต์นี้มีมอดูล [/i18n](../i18n) ที่ไม่เหมือนกับโครงการวิกิมีเดีย
 * ไฟล์ `thuncyc_family.py` จำเป็นต่อการรันบอตบนไร้สาระนุกรม ถ้าขี้เกียจทำเองติดต่อได้ที่ [@ptsgrn](https://github.com/ptsgrn) หรือที่ [patsagorn_y@outlook.com](mailto:patsagorn_y@outlook.com) หรือที่[ผู้ใช้:Patzagorn Y?](https://ไร้สาระนุกรม.com/wiki/ผู้ใช้:Patzagorn_Y?)บนไร้สาระนุกรม
-* **อ่านที่ [README.rst](../blob/master/README.rst) ด้วย**
+* **อ่านที่ [README.rst](../README.rst) ด้วย**
