@@ -27,18 +27,22 @@ from pywikibot.bot import SingleSiteBot, AutomaticTWSummaryBot, ExistingPageBot
 from pywikibot.exceptions import ArgumentDeprecationWarning
 from pywikibot.tools import issue_deprecation_warning
 
+#from pandas import Timestamp
+
 template_to_the_image = {
     'meta': '{{Orphan file}}',
     'test': '{{Orphan file}}',
     'it': '{{immagine orfana}}',
     'fa': '{{تصاویر بدون استفاده}}',
     'ur': '{{غیر مستعمل تصاویر}}',
+    'th': '{{ไฟล์ไม่ได้ใช้|date={{subst:#time:d F xkY}}|by=[[ผู้ใช้:PatzaBot|กระบวนการอัตโนมัติ]]|timestamp=%(timestamp)s}}',
 }
 
 # This template message should use subst:
 template_to_the_user = {
     'fa': '\n\n{{جا:اخطار به کاربر برای تصاویر بدون استفاده|%(title)s}}--~~~~',
     'ur': '\n\n{{جا:اطلاع برائے غیر مستعمل تصاویر}}--~~~~',
+    'th': '\n\n{{subst:ผู้ใช้:PatzaBot/ไฟล์ไม่ได้ใช้/ผู้ใช้|%(title)s|%(timestamp)s}} — ~~~~',
 }
 
 
@@ -70,18 +74,35 @@ class UnusedFilesBot(SingleSiteBot, AutomaticTWSummaryBot, ExistingPageBot):
         # rather than a local page with the same name as shared media.
         if (image.fileUrl() and not image.fileIsShared()
                 and 'http://' not in image.text):
-            if self.template_image in image.text:
+            if "{{ไฟล์ไม่ได้ใช้|" in image.text:
                 pywikibot.output('{0} done already'
                                  .format(image.title(as_link=True)))
                 return
-
+            if "<!-- ไม่สนใจไฟล์ไม่ได้ใช้" in image.text:
+                pywikibot.output('{0} ไม่สนใจการเตือน ข้าม'
+                                 .format(image.title(as_link=True)))
+                return
+            if "<!-- IGNOREORPHAN" in image.text:
+                pywikibot.output('{0} ไม่สนใจการติดป้าย ข้าม'
+                                 .format(image.title(as_link=True)))
+                return
+            mpyA = image.get_file_history()
+            mpyB = list(mpyA.values())
+            print(mpyB)
+            mpyC = mpyB.pop(0)
+            mpyD = mpyC['timestamp']
+            self.template_image = self.template_image % {'timestamp': mpyD}
             self.append_text(image, '\n\n' + self.template_image)
             if self.getOption('nouserwarning'):
                 return
-            uploader = image.get_file_history().pop(0)['user']
+            if "<!-- USERIGNOREORPHAN" in image.text:
+                pywikibot.output('{0} ผู้อัปโหลดไม่สนใจการติดป้าย ข้าม'
+                                 .format(image.title(as_link=True)))
+                return
+            uploader = mpyC['user']
             user = pywikibot.User(image.site, uploader)
             usertalkpage = user.getUserTalkPage()
-            msg2uploader = self.template_user % {'title': image.title()}
+            msg2uploader = self.template_user % {'title': image.title(),'timestamp': mpyD}
             self.append_text(usertalkpage, msg2uploader)
 
     def append_text(self, page, apptext):
@@ -99,7 +120,6 @@ class UnusedFilesBot(SingleSiteBot, AutomaticTWSummaryBot, ExistingPageBot):
         text += apptext
         self.current_page = page
         self.put_current(text)
-
 
 def main(*args):
     """

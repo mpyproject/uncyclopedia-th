@@ -126,6 +126,7 @@ n_txt = {
     'ja': '{{subst:Nld}}',
     'ko': '{{subst:nld}}',
     'sr': '{{subst:датотека без лиценце}}',
+    'th': 'เข้ามาดู...',
     'ta': '{{subst:nld}}',
     'ur': '{{subst:حقوق نسخہ تصویر نامعلوم}}',
     'zh': '{{subst:No license/auto}}',
@@ -178,6 +179,7 @@ empty = {
     'ko': '{{환영}}--~~~~\n',
     'sr': '{{dd}}--~~~~\n',
     'ta': '{{welcome}}\n~~~~\n',
+    'th': '{{subst:welcome}}<br>~~~~\n<!-- ข้อความนี้ถูกส่งเพราะมีคนลืมต้อนรับ แต่พอดีมาเห็น เลยต้อนรับเองก็ได้ โดย PatzaBot -->',
     'ur': '{{خوش آمدید}}\n~~~~\n',
     'zh': '{{subst:welcome|sign=~~~~}}',
 }
@@ -200,6 +202,7 @@ delete_immediately = {
                'Молим вас да проверите да ли је у складу са правилима.}}',
     'ta': '{{delete|'
           'இந்தக் கோப்பு .%s என்றக் கோப்பு நீட்சியைக் கொண்டுள்ளது.}}',
+    'th': '{{ลบ|ไฟล์มีนามสกุล .%s ซึ่งไม่ควรจะเกิดขึ้น (อันโนมัติโดย PatzaBot)}}',
     'ur': '{{سریع حذف شدگی|اس ملف میں .%s بطور توسیع موجود ہے۔ }}',
     'zh': '{{delete|未知檔案格式%s}}',
 }
@@ -229,6 +232,7 @@ nothing_notification = {
     'ko': '\n{{subst:User:Kwjbot IV/untagged|%s}} --~~~~',
     'sr': '\n{{subst:Обавештење о датотеци без лиценце|%s}} --~~~~',
     'ta': '\n{{subst:Di-no license-notice|படிமம்:%s}} ~~~~',
+    'th': '',
     'ur': '{{subst:ماخذ تصویر|File:%s}}--~~~~',
     'zh': '\n{{subst:Uploadvionotice|File:%s}} ~~~~',
 }
@@ -248,6 +252,7 @@ bot_list = {
     'ko': ['Kwjbot IV'],
     'sr': ['ZoranBot'],
     'ta': ['TrengarasuBOT'],
+    'th': ['PakornBot'],
     'ur': ['Shuaib-bot', 'Tahir-bot', 'SAMI.bot'],
     'zh': ['Alexbot'],
 }
@@ -288,6 +293,7 @@ report_page = {
     'ja': 'User:Alexbot/report',
     'ko': 'User:Kwjbot IV/Report',
     'sr': 'User:ZoranBot/checkimages.py/дневник',
+    'th': 'ผู้ใช้:PatzaBot/เรื่องภาพ/รายงาน',
     'ta': 'User:Trengarasu/commonsimages',
     'ur': 'صارف:محمد شعیب/درخواست تصویر',
     'zh': 'User:Alexsh/checkimagereport',
@@ -322,6 +328,7 @@ HiddenTemplate = {
     'ko': ['Template:그림 정보'],
     'sr': ['Шаблон:Информација', 'Шаблон:Non-free use rationale 2'],
     'ta': ['Template:Information'],
+    'th': [''],
     'ur': ['Template:معلومات'],
     'zh': ['Template:Information'],
 }
@@ -370,12 +377,14 @@ duplicatesText = {
     'it': '\n{{Progetto:Coordinamento/Immagini/Bot/Template duplicati|'
           '__images__}}',
     'sr': '{{NowCommons|__image__}}',
+    'th': "'''เจอภาพนี้อยู่ที่อันคอมมอนส์ในชื่อ __images__ หากเลือกได้กรุณาใช้ภาพทึ่อาจดีกว่านิดหน่อย'''"
 }
 
 # Message to put in the talk
 duplicates_user_talk_text = {
     'it': '{{subst:Progetto:Coordinamento/Immagini/Bot/Messaggi/Duplicati|'
           '%s|%s|~~~}} --~~~~',
+    'th': "== อืม เหมือน[[:file:%s|ภาพของคุณ]]จะซ้ำกับอันคอมมอนส์ ==\nสวัสดี {{subst:ROOTPAGENAME}} เหตุที่คุณได้ข้อความนี้ เพราะ PatzaBot เจอว่ารูปคุณดันอาจบังเอิญเหมือนกันหรือคล้ายกันอย่างมากกับไฟล์ในอันคอมมอนส์ ถ้าถามว่าเราบอกคุณทำไม ไม่มีอะไร เราแค่อยากให้คุณตรวจไฟล์ในอันคอมมอนส์ก่อนมาอัพที่วิกิ แค่นั้นครับ ขอบคุณอ่านจนจบ \n\n Best,\n~~~~~",
 }
 
 # Regex to detect the template put in the image's description to find the dupe
@@ -436,7 +445,7 @@ serviceTemplates = {
 
 # Add your project (in alphabetical order) if you want that the bot starts
 project_inserted = ['ar', 'commons', 'de', 'en', 'fa', 'ga', 'hu', 'it', 'ja',
-                    'ko', 'meta', 'sr', 'ta', 'test', 'ur', 'zh']
+                    'ko', 'meta', 'sr', 'th', 'test', 'ur', 'zh']
 
 # END OF CONFIGURATION.
 
